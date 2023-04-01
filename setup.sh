@@ -13,6 +13,9 @@ mkdir -p /home/$NEW_USER/.local/share/fonts
 cp IosevkaTermNerdFontComplete.ttf /home/$NEW_USER/.local/share/fonts/
 cp -R .config /home/$NEW_USER/                                               
 cp .gtkrc-2.0 /home/$NEW_USER/
+# add lazyvim starter
+git clone https://github.com/LazyVim/starter /home/$NEW_USER/.config/nvim
+rm -rf ~/.config/nvim/.git
 chown -R $NEW_USER:$NEW_USER /home/$NEW_USER/.local
 chown -R $NEW_USER:$NEW_USER /home/$NEW_USER/.config
 chown $NEW_USER:$NEW_USER /home/$NEW_USER/.gtkrc-2.0
