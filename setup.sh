@@ -1,21 +1,24 @@
 #!/bin/bash
 
-if [ -f /tmp/new_username.txt ]
-then
-    NEW_USER=$(cat /tmp/new_username.txt)
+if [ -f /tmp/new_username.txt ]; then
+	NEW_USER=$(cat /tmp/new_username.txt)
 else
-    NEW_USER=$(cat /tmp/$chroot_path/etc/passwd | grep "/home" |cut -d: -f1 |head -1)
+	NEW_USER=$(cat /tmp/$chroot_path/etc/passwd | grep "/home" | cut -d: -f1 | head -1)
 fi
 
-git clone https://github.com/EndeavourOS-Community-Editions/bspwm.git
+git clone https://github.com/rotkonetworks/narcOS-bspwm.git
 cd bspwm
 mkdir -p /home/$NEW_USER/.local/share/fonts
 cp IosevkaTermNerdFontComplete.ttf /home/$NEW_USER/.local/share/fonts/
-cp -R .config /home/$NEW_USER/                                               
+cp -R .config /home/$NEW_USER/
 cp .gtkrc-2.0 /home/$NEW_USER/
+
 # add lazyvim starter
 git clone https://github.com/LazyVim/starter /home/$NEW_USER/.config/nvim
 rm -rf ~/.config/nvim/.git
+cp copilot.lua /home/$NEW_USER/.config/nvim/lua/plugins
+
+# correct permissions
 chown -R $NEW_USER:$NEW_USER /home/$NEW_USER/.local
 chown -R $NEW_USER:$NEW_USER /home/$NEW_USER/.config
 chown $NEW_USER:$NEW_USER /home/$NEW_USER/.gtkrc-2.0
