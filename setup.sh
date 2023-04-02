@@ -14,9 +14,7 @@ cp -R .config /home/$NEW_USER/
 cp .gtkrc-2.0 /home/$NEW_USER/
 
 # add lazyvim starter
-git clone https://github.com/LazyVim/starter /home/$NEW_USER/.config/nvim
-rm -rf ~/.config/nvim/.git
-cp copilot.lua /home/$NEW_USER/.config/nvim/lua/plugins
+./nvim/setup.sh $NEW_USER
 
 # correct permissions
 chown -R $NEW_USER:$NEW_USER /home/$NEW_USER/.local
