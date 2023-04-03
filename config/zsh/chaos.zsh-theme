@@ -10,23 +10,27 @@ ZSH_THEME_GIT_PROMPT_DIRTY="%{$fg_bold[red]%}⚡%{$reset_color%}"
 ZSH_THEME_GIT_PROMPT_AHEAD="%{$fg_bold[red]%}!%{$reset_color%}"
 ZSH_THEME_GIT_PROMPT_CLEAN="%{$fg_bold[green]%}✓%{$reset_color%}"
 
-# Python virtual environment indicator
-function virtualenv_prompt() {
-  if [[ -n "$VIRTUAL_ENV" ]]; then
-    echo "%{$fg_bold[magenta]%}($(basename $VIRTUAL_ENV))%{$reset_color%}"
-  fi
-}
+ZSH_THEME_GIT_PROMPT_ADDED="%{$fg[green]%} ✚"
+ZSH_THEME_GIT_PROMPT_MODIFIED="%{$fg[blue]%} ✹"
+ZSH_THEME_GIT_PROMPT_DELETED="%{$fg[red]%} ✖"
+ZSH_THEME_GIT_PROMPT_RENAMED="%{$fg[magenta]%} ➜"
+ZSH_THEME_GIT_PROMPT_UNMERGED="%{$fg[yellow]%} ═"
+ZSH_THEME_GIT_PROMPT_UNTRACKED="%{$fg[cyan]%} ✭"
 
-# AI-related repository prompt character
-function ai_repo_char() {
-  if [[ -f "ai_requirements.txt" ]]; then
-    echo "%{$fg_bold[cyan]%}⚛%{$reset_color%}"
-  fi
-}
+# Format for git_prompt_long_sha() and git_prompt_short_sha()
+ZSH_THEME_GIT_PROMPT_SHA_BEFORE="➤ %{$fg_bold[yellow]%}"
+ZSH_THEME_GIT_PROMPT_SHA_AFTER="%{$reset_color%}"
 
+# Colors vary depending on time lapsed.
+ZSH_THEME_GIT_TIME_SINCE_COMMIT_SHORT="%{$fg[green]%}"
+ZSH_THEME_GIT_TIME_SHORT_COMMIT_MEDIUM="%{$fg[yellow]%}"
+ZSH_THEME_GIT_TIME_SINCE_COMMIT_LONG="%{$fg[red]%}"
+ZSH_THEME_GIT_TIME_SINCE_COMMIT_NEUTRAL="%{$fg[cyan]%}"
+
+# Left side prompt
 PROMPT='
 $(virtualenv_prompt)%{$fg_bold[blue]%}%m%{$reset_color%} 福 %{$fg[cyan]%}%~ %{$reset_color%}$(git_prompt_short_sha)$(git_prompt_info)
-%{$fg[cyan]%}%!%{$reset_color%} $(ai_repo_char)$(prompt_char) '
+%{$fg[cyan]%}%!%{$reset_color%} $(prompt_char) : '
 
 # Right side prompt
 RPROMPT='${return_status}$(git_time_since_commit)$(git_prompt_status)%{$reset_color%}'
@@ -82,3 +86,9 @@ function git_time_since_commit() {
     fi
 }
 
+# Python virtual environment indicator
+function virtualenv_prompt() {
+  if [[ -n "$VIRTUAL_ENV" ]]; then
+    echo "%{$fg_bold[magenta]%}($(basename $VIRTUAL_ENV))%{$reset_color%}"
+  fi
+}
