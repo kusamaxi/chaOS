@@ -3,14 +3,14 @@ colors:
   # Default colors
   primary:
     background: '0x000000' # Black
-    foreground: '0xF8229B' # Pink
+    foreground: '0xF8229B' # Bright Pink
   cursor:
-    text: '0x000000'
-    cursor: '0xe6007a'
+    text: '0x000000' # Black
+    cursor: '0xe6007a' # Pink
 
   # Normal colors
   normal:
-    black:   '0x000000'
+    black:   '0x000000' # Black
     blue:     '0xe6007a' # Pink
     green:   '0x56F39A' # Green
     yellow:  '0xD3FF33' # Lime
