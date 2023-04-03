@@ -30,7 +30,7 @@ ZSH_THEME_GIT_TIME_SINCE_COMMIT_NEUTRAL="%{$fg[cyan]%}"
 # Left side prompt
 PROMPT='
 $(virtualenv_prompt)%{$fg_bold[blue]%}%m%{$reset_color%} 福 %{$fg[cyan]%}%~ %{$reset_color%}$(git_prompt_short_sha)$(git_prompt_info)
-%{$fg[cyan]%}%!%{$reset_color%} $(prompt_char) : '
+%{$fg[cyan]%}%!%{$reset_color%} $(prompt_char) '
 
 # Right side prompt
 RPROMPT='${return_status}$(git_time_since_commit)$(git_prompt_status)%{$reset_color%}'
