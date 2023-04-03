@@ -29,7 +29,7 @@ ZSH_THEME_GIT_TIME_SINCE_COMMIT_NEUTRAL="%{$fg[cyan]%}"
 
 # Left side prompt
 PROMPT='
-$(virtualenv_prompt)%{$fg_bold[blue]%}%m%{$reset_color%} 福 %{$fg[cyan]%}%~ %{$reset_color%}$(git_prompt_short_sha)$(git_prompt_info)
+$(virtualenv_prompt)%{$fg_bold[blue]%}%m%{$reset_color%} 𓅨 %{$fg[cyan]%}%~ %{$reset_color%}$(git_prompt_short_sha)$(git_prompt_info)
 %{$fg[cyan]%}%!%{$reset_color%} $(prompt_char) '
 
 # Right side prompt
@@ -40,7 +40,7 @@ function prompt_char() {
   command git branch &>/dev/null && echo "%{$fg[green]%}±%{$reset_color%}" && return
   command hg root &>/dev/null && echo "%{$fg_bold[red]%}☿%{$reset_color%}" && return
   command darcs show repo &>/dev/null && echo "%{$fg_bold[green]%}❉%{$reset_color%}" && return
-  echo "𓅨 "
+  echo "🕸"
 }
 
 # Determine the time since last commit. If branch is clean,
