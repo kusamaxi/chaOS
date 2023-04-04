@@ -74,8 +74,7 @@
     - adobe-source-han-sans-cn-fonts
     - opendesktop-fonts
     - ttf-opensans
-    - firefox
-    - firefox-i18n-$LOCALE
+    - chromium
     - alsa-utils
     - alsa-plugins
     - alsa-firmware
