@@ -1,36 +1,14 @@
 #
-# wm independent hotkeys
+# chaOS hotkeys
 #
 
-# terminal emulator
-super + Return
-	xfce4-terminal
-
-# program launcher
-super + d
-	rofi -modi drun -show drun -line-padding 4 \
-                -columns 2 -padding 50 -hide-scrollbar -terminal xfce4-terminal \
-                -show-icons -drun-icon-theme "Qogir-dark" -font "Droid Sans Regular 10"
-
-# show open window
-super + ctrl + d
-	rofi -modi drun -show window -line-padding 4 \
-                -columns 2 -padding 50 -hide-scrollbar -terminal xfce4-terminal \
-                -show-icons -drun-icon-theme "Qogir-dark" -font "Droid Sans Regular 10"
-
-# show ssh sesssions
-super + shift + d
-	rofi -modi drun -show ssh -line-padding 4 \
-                -columns 2 -padding 50 -hide-scrollbar -terminal xfce4-terminal \
-                -show-icons -drun-icon-theme "Qogir-dark" -font "Droid Sans Regular 10"
-
-# power-menu 
-super + shift + e
-     ~/.config/rofi/powermenu.sh
-
-# make sxhkd reload its configuration files:
+# reload sxhkd configs
 super + Escape
 	pkill -USR1 -x sxhkd
+
+# Alt + Super + g to enter disable sxhkd keys, F6 to enable
+super + alt + g: F6
+    pkill -ALRM sxhkd
 
 #
 # bspwm hotkeys
@@ -76,21 +54,13 @@ super + ctrl + {m,x,y,z}
 super + {_,shift + }{h,j,k,l}
 	bspc node -{f,s} {west,south,north,east}
 
-# focus the node for the given path jump
-super + {p,b,comma,period}
-	bspc node -f @{parent,brother,first,second}
-
 # focus the next/previous window in the current desktop
-super + {_,shift + }c
+super + {_,shift + }Tab
 	bspc node -f {next,prev}.local.!hidden.window
 
 # focus the next/previous desktop in the current monitor
 super + bracket{left,right}
 	bspc desktop -f {prev,next}.local
-
-# focus the last node/desktop
-super + {grave,Tab}
-	bspc {node,desktop} -f last
 
 # focus the older or newer node in the focus history
 super + {o,i}
@@ -141,15 +111,15 @@ super + {Left,Down,Up,Right}
 # Special hotkeys
 #
 
-# Multimedia keys
+# Higher volume
 XF86AudioRaiseVolume
   amixer -q set Master 5%+ unmute
 
-# Still multimedia
+# Lower volume
 XF86AudioLowerVolume
   amixer -q set Master 5%- unmute
 
-# still
+# Mute/unmute volume
 XF86AudioMute
   amixer -D pulse sset Master toggle-mute
   
@@ -159,24 +129,60 @@ XF86AudioMute
 # Brightness up
 XF86MonBrightnessUp
   xbacklight -inc 5
+  # sexbacklight for nvidia-prime setups
+  # using xrandr to control brightness
+  # ~/scripts/sexbacklight -inc 5 
 
-# And brightness down
+# Brightness down
 XF86MonBrightnessDown
   xbacklight -dec 5
+  # ./scripts/sexbacklight -dec 5
 
-# Screenshot
+# Take screenshot -menu
 Print
-  scrot "$(xdg-user-dir PICTURES)/screenshot-$(date +%F_%T).png"
+  flameshot gui
 
-super + Print
-  ~/.config/bspwm/scripts/screenshot.sh
-
-# Shortcuts
+# Open browser
 super + w 
-  firefox
+  chromium
 
-super + n 
-  thunar  
+# File manager
+super + e
+  thunar
 
+# Change keyboard language
+super + space
+	{setxkbmap us, setxkbmap fi}
+
+# terminal emulator - alacritty
+super + Return
+  alacritty
+
+# program launcher
+super + d
+  rofi \
+    -show drun -terminal alacritty \
+    -theme "$HOME/.config/rofi/launchers/type-1/style-9.rasi" \
+    -font "Hack 10"
+
+# connect to ssh servers
+super + c
+  rofi \
+    -show ssh -terminal alacritty \
+    -theme "$HOME/.config/rofi/launchers/type-1/style-1.rasi" \
+    -font "Hack 10"
+
+# power-menu
+super + p
+  ~/.config/rofi/powermenu/type-5/powermenu.sh
+
+super + b
+  rofi \ 
+    -modi "clipboard:greenclip print" \
+    -show clipboard -run-command '{cmd}' \
+    -theme "$HOME/.config/rofi/launchers/type-1/style-5.rasi" \
+    -font "Hack 10"
+
+# keybindins menu
 super + F1
   ~/.config/bspwm/scripts/keybindings_rofi.sh
