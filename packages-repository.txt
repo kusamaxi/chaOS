@@ -4,6 +4,7 @@ arandr
 arc-gtk-theme-eos
 archlinux-xdg-menu
 bspwm
+default-cursors
 dex
 dunst
 endeavouros-xfce4-terminal-colors
@@ -44,7 +45,6 @@ ttf-nerd-fonts-symbols-2048-em
 tumbler
 xbindkeys
 xclip
-xcursor-neutral
 xdg-user-dirs-gtk
 xed
 xfce4-terminal
