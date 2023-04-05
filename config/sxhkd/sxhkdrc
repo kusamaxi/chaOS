@@ -150,10 +150,6 @@ super + w
 super + e
   thunar
 
-# Change keyboard language
-super + space
-  ./scripts/keyboard_layout.sh
-
 # terminal emulator - alacritty
 super + Return
   alacritty
@@ -162,27 +158,38 @@ super + Return
 super + d
   rofi \
     -show drun -terminal alacritty \
-    -theme "$HOME/.config/rofi/chaos/launcher.rasi" \
+    -theme "$HOME/.config/rofi/applets/launcher/4k.rasi" \
+    -font "Unbounded Bold 14"
+
+# connect to ssh servers
+super + r
+  rofi \
+    -show run -terminal alacritty \
+    -theme "$HOME/.config/rofi/applets/launcher/4k.rasi" \
     -font "Unbounded Bold 14"
 
 # connect to ssh servers
 super + c
   rofi \
     -show ssh -terminal alacritty \
-    -theme "$HOME/.config/rofi/chaos/ssh.rasi" \
-    -font "Unbounded Normal 14"
-
-# power-menu
-super + p
-  ~/.config/rofi/powermenu/type-5/powermenu.sh
+    -theme "$HOME/.config/rofi/applets/launcher/4k.rasi" \
+    -font "Unbounded Bold 14"
 
 super + b
   rofi \ 
     -modi "clipboard:greenclip print" \
     -show clipboard -run-command '{cmd}' \
-    -theme "$HOME/.config/rofi/chaos/clipboard.rasi" \
+    -theme "$HOME/.config/rofi/applets/clipboard/4k.rasi" \
     -font "Unbounded Normal 14"
+
+# power-menu
+super + p
+  ~/.config/rofi/powermenu/4k.sh
+
+# Change keyboard language
+super + space
+  ~/config/rofi/applets/utils/keyboard_layout.sh
 
 # keybindins menu
 super + F1
-  ~/.config/sxhkd/scripts/keybindings_rofi.sh
+  ~/.config/rofi/applets/utils/keybindings.sh
