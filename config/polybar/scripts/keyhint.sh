@@ -1,5 +1,5 @@
 #!/bin/sh
-yad --title="EndeavourOS bspwm keybindings:"\
+yad --title="chaOS bspwm keybindings:"\
 	--no-buttons\
 	--geometry=400x345-15-400\
 	--list\
