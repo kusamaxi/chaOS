@@ -14,4 +14,5 @@ export PATH="$PNPM_HOME:$PATH"
 # SSH_AUTH_SOCK
 export SSH_AUTH_SOCK="$XDG_RUNTIME_DIR/ssh-agent.socket"
 
-# 
+# shortcuts
+alias configs='cd ~/xi/chaOS-config/config'
