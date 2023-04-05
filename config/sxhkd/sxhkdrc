@@ -152,7 +152,7 @@ super + e
 
 # Change keyboard language
 super + space
-	{setxkbmap us, setxkbmap fi}
+  ./scripts/keyboard_layout.sh
 
 # terminal emulator - alacritty
 super + Return
@@ -162,15 +162,15 @@ super + Return
 super + d
   rofi \
     -show drun -terminal alacritty \
-    -theme "$HOME/.config/rofi/launchers/type-1/style-9.rasi" \
-    -font "Hack 10"
+    -theme "$HOME/.config/rofi/chaos/launcher.rasi" \
+    -font "Unbounded Bold 14"
 
 # connect to ssh servers
 super + c
   rofi \
     -show ssh -terminal alacritty \
-    -theme "$HOME/.config/rofi/launchers/type-1/style-1.rasi" \
-    -font "Hack 10"
+    -theme "$HOME/.config/rofi/chaos/ssh.rasi" \
+    -font "Unbounded Normal 14"
 
 # power-menu
 super + p
@@ -180,9 +180,9 @@ super + b
   rofi \ 
     -modi "clipboard:greenclip print" \
     -show clipboard -run-command '{cmd}' \
-    -theme "$HOME/.config/rofi/launchers/type-1/style-5.rasi" \
-    -font "Hack 10"
+    -theme "$HOME/.config/rofi/chaos/clipboard.rasi" \
+    -font "Unbounded Normal 14"
 
 # keybindins menu
 super + F1
-  ~/.config/bspwm/scripts/keybindings_rofi.sh
+  ~/.config/sxhkd/scripts/keybindings_rofi.sh
