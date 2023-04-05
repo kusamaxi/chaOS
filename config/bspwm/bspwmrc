@@ -13,7 +13,7 @@ sh ~/.screenlayout/monitor.sh &
 bspc monitor -d I II III IV V VI VII VIII IX X
 
 # Configure gaps and borders
-bspc config border_width 2
+bspc config border_width 6
 bspc config window_gap 12
 
 # Border theme: chaOS
@@ -39,7 +39,7 @@ bspc rule -a Screenkey manage=off
 # Autostart
 #
 # Start clipboard manager
-greenclip daemon
+greenclip daemon &
 # Bar
 ~/.config/polybar/launch.sh &
 # Notifications
@@ -47,7 +47,7 @@ greenclip daemon
 # Polkit
 /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1 &
 # Wallpaper
-nitrogen --restore &
+feh --bg-scale /usr/share/chaos/backgrounds/chaOS.webp
 # Dex
 dex -a -s /etc/xdg/autostart/:~/.config/autostart/ &
 # Picom
