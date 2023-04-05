@@ -42,7 +42,7 @@ font:
     family: Fira Code Nerd FontMono
     style: Bold
 
-  size: 12.0
+  size: 16.0
 
 ## Set environment variables
 env:
@@ -55,8 +55,8 @@ window:
     lines: 22
 
   padding:
-    x: 2
-    y: 2
+    x: 0
+    y: 0
 
   opacity: 1
   decorations: full
