@@ -30,19 +30,25 @@ colors:
     cyan:    '0x00ffe1' # Cyan
     white:   '0xFFFFFF' # White
 
-
 font:
   # The normal (roman) font face to use.
   normal:
-    family: Fira Code Nerd FontMono
-    style: Retina
+    family: "Ubuntu Mono Nerd Font"
+    style: Regular
 
   # The bold font face
   bold:
-    family: Fira Code Nerd FontMono
-    style: Bold
+    family: "Ubuntu Mono Nerd Font"
+    style: Bold 
 
-  size: 16.0
+  size: 14.0
+
+  offset:
+    x: 0
+    y: 0
+  glyph_offset:
+    x: 0
+    y: 0
 
 ## Set environment variables
 env:
@@ -55,8 +61,8 @@ window:
     lines: 22
 
   padding:
-    x: 0
-    y: 0
+    x: 4
+    y: 4
 
   opacity: 1
   decorations: full
