@@ -188,8 +188,11 @@ super + p
 
 # Change keyboard language
 super + space
-  ~/config/rofi/applets/utils/keyboard_layout.sh
+  ~/.config/rofi/applets/utils/keyboard_layout.sh
 
 # keybindins menu
 super + F1
   ~/.config/rofi/applets/utils/keybindings.sh
+
+# change picom style
+super + \
