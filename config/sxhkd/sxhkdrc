@@ -195,4 +195,5 @@ super + F1
   ~/.config/rofi/applets/utils/keybindings.sh
 
 # change picom style
-super + \
+super + backslash
+  rofi -show picom-changer -modi "picom-changer:~/.config/rofi/bin/settings/picom-changer.sh" -run-command '{cmd}' -theme "$HOME/.config/rofi/applets/clipboard/4k.rasi" -font "Unbounded Normal 14"
