@@ -1,10 +1,14 @@
 #!/bin/bash
-
-layouts=("us" "fi") # Add or modify the keyboard layouts here
-current_layout=$(setxkbmap -query | awk '/layout:/ {print $2}')
-
-selected_layout=$(printf "%s\n" "${layouts[@]}" | rofi -dmenu -p "Keyboard Layout" -theme ~/.config/rofi/chaos/clipboard.rasi -font ~/.config/rofi/shared/fonts.rasi)
-
-if [ -n "$selected_layout" ]; then
-	setxkbmap "$selected_layout"
-fi
+current_layout=$(setxkbmap -query | grep 'layout:' | cut -d ' ' -f 6)
+layouts=("us" "fi")
+layout_count=${#layouts[@]}
+current_index=-1
+for index in "${!layouts[@]}"; do
+	if [ "${layouts[$index]}" == "$current_layout" ]; then
+		current_index=$index
+		break
+	fi
+done
+next_index=$(((current_index + 1) % layout_count))
+setxkbmap "${layouts[$next_index]}"
+dunstify "Layout switched to ${layouts[$next_index]}" -t 400 -u normal
