@@ -41,7 +41,7 @@ font:
     family: "Ubuntu Mono Nerd Font"
     style: Bold 
 
-  size: 14.0
+  size: 16.0
 
   offset:
     x: 0
