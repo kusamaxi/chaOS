@@ -62,6 +62,10 @@ super + {_,shift + }Tab
 super + bracket{left,right}
 	bspc desktop -f {prev,next}.local
 
+# focus the next/previous desktop in the current monitor
+alt + {_,shift + }Tab
+	bspc desktop -f {next,prev}.local
+
 # focus the older or newer node in the focus history
 super + {o,i}
 	bspc wm -h off; \
@@ -190,7 +194,6 @@ super + p
 super + space
   ~/.config/rofi/applets/utils/keyboard_layout.sh
 
-# keybindins menu
 super + F1
   ~/.config/rofi/applets/utils/keybindings.sh
 
