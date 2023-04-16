@@ -13,8 +13,8 @@ sh ~/.screenlayout/monitor.sh &
 bspc monitor -d I II III IV V VI VII VIII IX X
 
 # Configure gaps and borders
-bspc config border_width 6
-bspc config window_gap 12
+bspc config border_width 2
+bspc config window_gap 4
 
 # Border theme: chaOS
 bspc config focused_border_color "#E6007A"
@@ -22,7 +22,7 @@ bspc config normal_border_color "#800341"
 bspc config active_border_color "#FA0079"
 
 # Configure window rules
-bspc config split_ratio 0.52
+bspc config split_ratio 0.53
 bspc config borderless_monocle true
 bspc config gapless_monocle true
 bspc config pointer_follows_focus true
