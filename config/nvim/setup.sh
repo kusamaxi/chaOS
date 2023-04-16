@@ -13,4 +13,4 @@ git clone https://github.com/LazyVim/starter /home/$NEW_USER/.config/nvim
 rm -rf ~/.config/nvim/.git
 
 cp copilot.lua /home/$NEW_USER/.config/nvim/lua/plugins
-cp chatgpt.lua /home/$NEW_USER/.config/nvim/lua/plugins
+cp chaos.lua /home/$NEW_USER/.config/nvim/lua/plugins
