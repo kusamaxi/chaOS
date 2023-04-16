@@ -162,41 +162,46 @@ super + Return
 super + d
   rofi \
     -show drun -terminal alacritty \
-    -theme "$HOME/.config/rofi/applets/launcher/4k.rasi" \
-    -font "Unbounded Bold 14"
+    -theme "$HOME/.config/rofi/applets/launcher/default.rasi" \
+    -font "Unbounded Normal 10"
 
 # connect to ssh servers
 super + r
   rofi \
     -show run -terminal alacritty \
-    -theme "$HOME/.config/rofi/applets/launcher/4k.rasi" \
-    -font "Unbounded Bold 14"
+    -theme "$HOME/.config/rofi/applets/launcher/default.rasi" \
+    -font "Unbounded Normal 10"
 
 # connect to ssh servers
 super + c
   rofi \
-    -show ssh -terminal alacritty \
-    -theme "$HOME/.config/rofi/applets/launcher/4k.rasi" \
-    -font "Unbounded Bold 14"
+    -show ssh -terminal alacritty \.rasi
+    -theme "$HOME/.config/rofi/applets/launcher/default.rasi" \
+    -font "Unbounded Normal 10"
 
 super + b
   rofi \ 
     -modi "clipboard:greenclip print" \
     -show clipboard -run-command '{cmd}' \
-    -theme "$HOME/.config/rofi/applets/clipboard/4k.rasi" \
-    -font "Unbounded Normal 14"
+    -theme "$HOME/.config/rofi/bin/utils/clipboard.rasi" \
+    -font "Unbounded Light 10"
 
 # power-menu
-super + p
-  ~/.config/rofi/powermenu/4k.sh
+super + x
+  ~/.config/rofi/bin/powermenu.sh
 
 # Change keyboard language
 super + space
-  ~/.config/rofi/applets/utils/keyboard_layout.sh
+  ~/.config/rofi/bin/utils/keyboard_layout.sh
 
 super + F1
-  ~/.config/rofi/applets/utils/keybindings.sh
+  ~/.config/rofi/bin/utils/keybindings.sh
 
 # change picom style
 super + backslash
-  rofi -show picom-changer -modi "picom-changer:~/.config/rofi/bin/settings/picom-changer.sh" -run-command '{cmd}' -theme "$HOME/.config/rofi/applets/clipboard/4k.rasi" -font "Unbounded Normal 14"
+  rofi \
+  -show picom-changer \
+  -modi "picom-changer:~/.config/rofi/bin/settings/picom-changer.sh" \
+  -run-command '{cmd}' \
+  -theme "$HOME/.config/rofi/bin/utils/clipboard.rasi" \
+  -font "Unbounded Light 10"
