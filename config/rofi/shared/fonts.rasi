@@ -8,5 +8,5 @@
  **/
 
 * {
-    font: "Unbounded Medium 14";
+    font: "Unbounded Medium 12";
 }
