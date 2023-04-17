@@ -2,8 +2,9 @@
 
 # Easy setup for testing
 mkdir ~/.local/share/fonts
-cp -R IosevkaTermNerdFontComplete.ttf ~/.local/share/fonts
-cp -R config/* ~/.config/
+cp -R fonts/* ~/.local/share/fonts/
+# replace with linking and install either /usr/share/chaos or ~/.local/share/chaos
+ln -s ${pwd}/config/* ~/.config/
 chmod -R +x ~/.config/bspwm
 chmod -R +x ~/.config/polybar/scripts
 sudo pacman -Syu --needed --noconfirm - <packages-repository.txt
