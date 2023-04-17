@@ -148,7 +148,7 @@ Print
 
 # Open browser
 super + w 
-  hardened-malloc-preload chromium
+  ~/.config/sxhkd/scripts/start-chromium.sh
 
 # File manager
 super + e
