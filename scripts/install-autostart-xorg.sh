@@ -14,7 +14,7 @@ mkdir -p /etc/systemd/system/getty@tty1.service.d
 cat >/etc/systemd/system/getty@tty1.service.d/override.conf <<EOL
 [Service]
 ExecStart=
-ExecStart=-/sbin/agetty --autologin $current_user --noclear %I \$TERM
+ExecStart=-/sbin/agetty --autologin $current_user --noclear %I \$TERM --skip-login --login-options "-f $current_user"
 EOL
 
 # Add Xorg start script to .bash_profile or .zprofile

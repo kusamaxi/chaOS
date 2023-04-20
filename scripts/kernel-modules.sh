@@ -19,7 +19,7 @@ fi
 
 # Update the system and install the required packages
 echo "Installing kernel modules..."
-yay -S bbswitch acpi_call-dkms v4l2loopback-dkms tp_smapi-dkms
+yay -S bbswitch acpi_call-dkms v4l2loopback-dkms
 
 # Enable the kernel modules
 echo "Enabling kernel modules..."
@@ -27,7 +27,6 @@ cat >/etc/modules-load.d/modules.conf <<EOL
 bbswitch
 acpi_call
 v4l2loopback
-tp_smapi
 EOL
 
 echo "Installation and enabling of kernel modules complete. Please reboot your system."
