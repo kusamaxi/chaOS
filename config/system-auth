@@ -1,0 +1,54 @@
+#%PAM-1.0
+
+# The following line is for systemd-homed user authentication
+auth      [success=2 default=ignore]  pam_systemd_home.so
+
+# Main authentication method using the standard UNIX mechanism
+auth       [success=1 default=bad]     pam_unix.so          try_first_pass nullok
+
+# This allows authentication to succeed even if no modules are configured
+auth       optional                    pam_permit.so
+
+# Set environment variables from the /etc/environment and user-specific files
+auth       required                    pam_env.so
+
+# The following line is for systemd-homed user account management
+account   [success=1 default=ignore]  pam_systemd_home.so
+
+# Main account management method using the standard UNIX mechanism
+account    required                    pam_unix.so
+
+# This allows account management to succeed even if no modules are configured
+account    optional                    pam_permit.so
+
+# Controls access based on the time of day
+account    required                    pam_time.so
+
+# The following line is for systemd-homed user password management
+password  [success=1 default=ignore]  pam_systemd_home.so
+
+# Main password management method using the standard UNIX mechanism
+password   required                    pam_unix.so          try_first_pass nullok shadow sha512
+
+# This allows password updates to succeed even if no modules are configured
+password   optional                    pam_permit.so
+
+# The following line is for systemd-homed user session management
+session   optional                    pam_systemd_home.so
+
+# Apply resource limits from /etc/security/limits.conf and /etc/security/limits.d/
+session    required                    pam_limits.so
+
+# Main session management method using the standard UNIX mechanism
+session    required                    pam_unix.so
+
+# This allows session management to succeed even if no modules are configured
+session    optional                    pam_permit.so
+
+# add faillock for 10 failed tries to wait 90s
+auth        required      pam_faillock.so preauth audit silent deny=10 unlock_time=90
+auth        required      pam_faillock.so authfail audit deny=10 unlock_time=90
+auth        [default=1 ignore=ignore success=ok] pam_succeed_if.so uid >= 1000 quiet
+auth        [default=1 ignore=ignore success=ok] pam_succeed_if.so uid < 1000 quiet
+account     required      pam_faillock.so
+

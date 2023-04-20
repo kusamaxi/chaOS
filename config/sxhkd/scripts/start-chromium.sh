@@ -6,7 +6,6 @@ LD_PRELOAD=/usr/lib/libhardened_malloc.so chromium \
 	--disable-component-update \
 	--disable-default-apps \
 	--disable-domain-reliability \
-	--disable-extensions \
 	--disable-infobars \
 	--disable-ping \
 	--disable-predict-network-actions \
