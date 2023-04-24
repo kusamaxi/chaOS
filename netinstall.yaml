@@ -117,7 +117,15 @@
     - eos-log-tool
     - keyserver-rank
     - inxi
-    - tldr
+    - alacritty
+    - neovim
+    - keepassxc
+    - bottom
+    - zsh
+    - syncthing
+    - ncdu
+    - zellij
+
 - name: "bspwm"
   description: bspwm is a tiling window manager that represents windows as the leaves of a full binary tree"
   hidden: false
