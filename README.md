@@ -1,9 +1,14 @@
 # chaOS
-**Terminal centric UX for Arch linux**
+**Terminal centric UX for linux**
 
-## To Install manually on Arch Linux 
-```bash
-git clone https://github.com/kusamaxi/chaOS.git && cd chaOS && bash chaos-install.sh
+## Dependencies
+```sh
+alacritty bspwm dunst nitrogen nvim picom polybar rofi sxhkd zsh greenclip xclip
 ```
 
-![chaOS](chaOS.webp)
+## Install
+```sh
+cp -r fonts ~/.local/share
+cp -r config/* ~/.config
+# or alternatively use soft linking to keep the repository updated
+```
