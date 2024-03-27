@@ -1,7 +1,7 @@
 # chaOS
 **Terminal centric UX for linux**
 ![image](https://github.com/kusamaxi/chaOS/assets/15621959/7c54b71e-fdca-44eb-bcc9-3f380a39c73b)
-
+https://www.youtube.com/watch?v=5p_BTNArMZ0
 
 ## Dependencies
 ```sh
